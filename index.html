@@ -3,230 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <title>Hệ thống Tính điểm Tổ Hợp CTU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
   <style>
     body {
       font-family: 'Times New Roman', Times, serif;
-      padding: 30px;
       margin: 0;
+      padding: 20px;
       background: url("nen-ctu.jpg") no-repeat center center fixed;
       background-size: cover;
+      box-sizing: border-box;
     }
 
     .box {
-      position: relative;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 25px;
-      max-width: 520px;
-      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 20px 30px;
+      max-width: 550px;
+      margin: 80px auto 30px;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-
-    h2 {
-      color: #0066cc;
       text-align: center;
     }
 
-    label, input, select, button {
-      display: block;
-      margin-top: 12px;
-      width: 100%;
-      font-size: 16px;
+    h2 {
+      color: #cc0000;
+      font-size: 28px;
+      margin-top: 0;
+      text-transform: uppercase;
     }
 
-    input, select {
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      padding: 10px;
-      margin-top: 20px;
-      background: #0066cc;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background: #004e99;
-    }
-
-    .result {
-      margin-top: 20px;
+    p {
       font-size: 18px;
-      font-weight: bold;
+      color: #333;
     }
 
-    ul {
-      padding-left: 20px;
+    .popup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to right, #cce6ff, #e6f2ff);
+      border-radius: 16px;
+      padding: 25px 35px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      gap: 15px;
+      text-align: left;
+    }
+
+    .popup img {
+      width: 110px;
+      flex-shrink: 0;
+    }
+
+    .popup h3 {
+      margin: 0 0 8px;
+      color: #003366;
+      font-size: 21px;
+    }
+
+    .popup a {
+      display: block;
+      margin: 4px 0;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+      font-size: 17px;
+      word-break: break-word;
+    }
+
+    .popup a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .popup {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .popup img {
+        margin-bottom: 10px;
+      }
+
+      .popup h3 {
+        font-size: 16px;
+      }
+
+      .popup a {
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .box {
+        padding: 30px 15px;
+        margin-top: 60px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-<div class="box">
-  <h2>HỆ THỐNG TÍNH ĐIỂM TỔ HỢP V-SAT</h2>
-  <label>Chọn môn V-SAT 1:</label>
-  <select>
-    <option>Toán</option><option>Ngữ Văn</option><option>Tiếng Anh</option>
-    <option>Vật lí</option><option>Hóa học</option><option>Sinh học</option>
-    <option>Lịch sử</option><option>Địa lí</option>
-  </select>
-  <input type="number" id="mon1" placeholder="Điểm môn 1 (thang 150)" min="0" max="150" step="0.1">
 
-  <label>Chọn môn V-SAT 2:</label>
-  <select>
-    <option>Toán</option><option>Ngữ Văn</option><option>Tiếng Anh</option>
-    <option>Vật lí</option><option>Hóa học</option><option>Sinh học</option>
-    <option>Lịch sử</option><option>Địa lí</option>
-  </select>
-  <input type="number" id="mon2" placeholder="Điểm môn 2 (thang 150)" min="0" max="150" step="0.1">
+  <div class="box">
+    <h2>🚧 HỆ THỐNG ĐANG BẢO TRÌ 🚧</h2>
+    <p>HỆ THỐNG TÍNH ĐIỂM ĐANG NÂNG CẤP!<br>VUI LÒNG QUAY LẠI SAU!</p>
+  </div>
 
-  <label>Chọn môn V-SAT 3:</label>
-  <select>
-    <option>Toán</option><option>Ngữ Văn</option><option>Tiếng Anh</option>
-    <option>Vật lí</option><option>Hóa học</option><option>Sinh học</option>
-    <option>Lịch sử</option><option>Địa lí</option>
-  </select>
-  <input type="number" id="mon3" placeholder="Điểm môn 3 (thang 150)" min="0" max="150" step="0.1">
+  <div class="popup">
+    <img src="icon.png" alt="capy">
+    <div>
+      <h3>TỔNG HỢP THÔNG TIN TUYỂN SINH</h3>
+      <a href="https://zalo.me/g/qkqzox111" target="_blank">Tham Gia Group Zalo Tư Vấn Tuyển Sinh</a>
+      <a href="https://docs.google.com/spreadsheets/d/1ycWJZnvW822vo_qjQ1gJDPAjqWKDVsweNUKNYCYBaQM/edit?gid=212231679#gid=212231679" target="_blank">Xem thông tin tổng hợp Q&A Tuyển Sinh CTU</a>
+      <a href="https://www.facebook.com/groups/vsat.practice/posts/1679600792751492/" target="_blank">Tặng trọn bộ Tài Liệu V-SAT</a>
+    </div>
+  </div>
 
-  <button onclick="tinhDiem()">Tính tổng điểm</button>
-  <div class="result" id="output"></div>
-
-  <h2>HỆ THỐNG TÍNH ĐIỂM TỔ HỢP HỌC BẠ</h2>
-  <label>Chọn môn Học Bạ 1:</label>
-  <select>
-    <option>Toán</option><option>Văn</option><option>Sử</option><option>Địa</option>
-    <option>GDKTPL</option><option>Lí</option><option>Hóa</option><option>Sinh</option>
-    <option>Tin học</option><option>Công nghệ</option>
-  </select>
-  <input type="number" id="hb1" placeholder="Điểm môn 1 (thang 10)" min="0" max="10" step="0.01">
-
-  <label>Chọn môn Học Bạ 2:</label>
-  <select>
-    <option>Toán</option><option>Văn</option><option>Sử</option><option>Địa</option>
-    <option>GDKTPL</option><option>Lí</option><option>Hóa</option><option>Sinh</option>
-    <option>Tin học</option><option>Công nghệ</option>
-  </select>
-  <input type="number" id="hb2" placeholder="Điểm môn 2 (thang 10)" min="0" max="10" step="0.01">
-
-  <label>Chọn môn Học Bạ 3:</label>
-  <select>
-    <option>Toán</option><option>Văn</option><option>Sử</option><option>Địa</option>
-    <option>GDKTPL</option><option>Lí</option><option>Hóa</option><option>Sinh</option>
-    <option>Tin học</option><option>Công nghệ</option>
-  </select>
-  <input type="number" id="hb3" placeholder="Điểm môn 3 (thang 10)" min="0" max="10" step="0.01">
-
-  <button onclick="tinhDiemHB()">Tính điểm học bạ</button>
-  <div class="result" id="outputHB"></div>
-</div>
-
-<script>
-const quyTacVsat = [
-  { a: 137.0, b: 150.0, c: 9.0, d: 10.0 },
-  { a: 127.5, b: 137.0, c: 8.8, d: 9.0 },
-  { a: 121.0, b: 127.5, c: 8.6, d: 8.8 },
-  { a: 112.5, b: 121.0, c: 8.4, d: 8.6 },
-  { a: 106.0, b: 112.5, c: 8.2, d: 8.4 },
-  { a: 99.5,  b: 106.0, c: 8.0, d: 8.2 },
-  { a: 94.0,  b: 99.5,  c: 7.8, d: 8.0 },
-  { a: 88.0,  b: 94.0,  c: 7.6, d: 7.8 },
-  { a: 81.5,  b: 88.0,  c: 7.4, d: 7.6 },
-  { a: 74.0,  b: 81.5,  c: 7.0, d: 7.4 },
-  { a: 64.0,  b: 74.0,  c: 6.4, d: 7.0 }
-];
-
-const quyTacHB = [
-  { a: 9.37, b: 10.00, c: 8.60, d: 9.80 },
-  { a: 9.10, b: 9.37, c: 8.40, d: 8.60 },
-  { a: 8.73, b: 9.10, c: 8.00, d: 8.40 },
-  { a: 8.40, b: 8.73, c: 7.80, d: 8.00 },
-  { a: 8.10, b: 8.40, c: 7.60, d: 7.80 },
-  { a: 7.77, b: 8.10, c: 7.20, d: 7.60 },
-  { a: 7.43, b: 7.77, c: 7.00, d: 7.20 },
-  { a: 7.07, b: 7.43, c: 6.60, d: 7.00 },
-  { a: 6.63, b: 7.07, c: 6.20, d: 6.60 },
-  { a: 6.07, b: 6.63, c: 5.40, d: 6.20 },
-  { a: 1.99, b: 6.07, c: 1.00, d: 5.40 }
-];
-
-function noiSuy(x, bang) {
-  for (let i = 0; i < bang.length; i++) {
-    let { a, b, c, d } = bang[i];
-    if (x >= a && x <= b) {
-      return c + ((x - a) * (d - c)) / (b - a);
-    }
-  }
-  return 0;
-}
-
-function tinhDiem() {
-  const mon1 = parseFloat(document.getElementById("mon1").value);
-  const mon2 = parseFloat(document.getElementById("mon2").value);
-  const mon3 = parseFloat(document.getElementById("mon3").value);
-  const output = document.getElementById("output");
-
-  if ([mon1, mon2, mon3].some(d => isNaN(d) || d < 0 || d > 150)) {
-    output.innerText = "⚠️ Vui lòng nhập đúng 3 điểm V-SAT (0–150).";
-    return;
-  }
-
-  const diemQD1 = noiSuy(mon1, quyTacVsat);
-  const diemQD2 = noiSuy(mon2, quyTacVsat);
-  const diemQD3 = noiSuy(mon3, quyTacVsat);
-  const tong = diemQD1 + diemQD2 + diemQD3;
-
-  output.innerHTML = `
-    ✅ <b>Điểm quy đổi:</b>
-    <ul>
-      <li>V-SAT Môn 1: ${diemQD1.toFixed(2)}</li>
-      <li>V-SAT Môn 2: ${diemQD2.toFixed(2)}</li>
-      <li>V-SAT Môn 3: ${diemQD3.toFixed(2)}</li>
-    </ul>
-    🔢 <strong>Tổng điểm xét tuyển: ${tong.toFixed(2)}</strong><br><br>
-    Kết quả chỉ mang tính chất Tham khảo!
-  `;
-}
-
-function tinhDiemHB() {
-  const hb1 = parseFloat(document.getElementById("hb1").value);
-  const hb2 = parseFloat(document.getElementById("hb2").value);
-  const hb3 = parseFloat(document.getElementById("hb3").value);
-  const output = document.getElementById("outputHB");
-
-  if ([hb1, hb2, hb3].some(d => isNaN(d) || d < 0 || d > 10)) {
-    output.innerText = "⚠️ Vui lòng nhập đúng 3 điểm học bạ (0–10).";
-    return;
-  }
-
-  const diemHB1 = noiSuy(hb1, quyTacHB);
-  const diemHB2 = noiSuy(hb2, quyTacHB);
-  const diemHB3 = noiSuy(hb3, quyTacHB);
-  const tong = diemHB1 + diemHB2 + diemHB3;
-  const diemTB = tong / 3;
-
-  const muc = quyTacHB.find(rule => diemTB > rule.a && diemTB <= rule.b);
-  const quyDoiText = muc 
-    ? `👉 Tương đương điểm TN THPT từ <b>${muc.c.toFixed(2)}</b> đến <b>${muc.d.toFixed(2)}</b>` 
-    : "⚠️ Không tìm thấy mức quy đổi phù hợp.";
-
-  output.innerHTML = `
-    ✅ <b>Điểm từng môn:</b>
-    <ul>
-      <li>Môn 1: ${diemHB1.toFixed(2)}</li>
-      <li>Môn 2: ${diemHB2.toFixed(2)}</li>
-      <li>Môn 3: ${diemHB3.toFixed(2)}</li>
-    </ul>
-    🔢 <strong>Tổng điểm học bạ: ${tong.toFixed(2)}</strong><br>
-    📌 ${quyDoiText}<br><br>
-    Kết quả chỉ mang tính chất Tham khảo!
-  `;
-}
-</script>
 </body>
 </html>
