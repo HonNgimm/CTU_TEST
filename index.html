@@ -2,62 +2,146 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Hệ thống Quy đổi điểm V-SAT 2025</title>
+  <title>Hệ thống Tính điểm Tổ Hợp CTU</title>
+  <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f8ff;
+      font-family: 'Times New Roman', Times, serif;
       padding: 30px;
+      margin: 0;
+      background: url("nen-ctu.jpg") no-repeat center center fixed;
+      background-size: cover;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 90, 180, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
     }
-    h2 {
-      text-align: center;
+
+    .popup-content {
+      background: #e6f2ff;
+      border-radius: 20px;
+      padding: 30px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+
+    .popup img {
+      width: 110px;
+    }
+
+    .popup h3 {
+      margin-top: 0;
       color: #004080;
+      font-size: 26px;
     }
-    label {
+
+    .popup a {
       display: block;
-      margin-top: 15px;
+      margin: 8px 0;
+      text-decoration: none;
+      color: #0066cc;
       font-weight: bold;
+      font-size: 21px;
     }
-    input, select, button {
+
+    .popup a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      color: red;
+      cursor: pointer;
+    }
+
+    .box {
+      position: relative;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      max-width: 520px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #0066cc;
+      text-align: center;
+    }
+
+    label, input, select, button {
+      display: block;
+      margin-top: 12px;
       width: 100%;
-      padding: 10px;
-      margin-top: 8px;
       font-size: 16px;
-      border-radius: 6px;
+    }
+
+    input, select {
+      padding: 8px;
+      border-radius: 5px;
       border: 1px solid #ccc;
     }
+
     button {
+      padding: 10px;
+      margin-top: 20px;
       background: #0066cc;
       color: white;
-      font-weight: bold;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-      margin-top: 20px;
+      font-weight: bold;
     }
+
     button:hover {
-      background: #004999;
+      background: #004e99;
     }
+
     .result {
       margin-top: 20px;
       font-size: 18px;
       font-weight: bold;
-      color: #006600;
+    }
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Quy đổi điểm V-SAT 2025</h2>
-    
-    <label for="mon">Chọn môn thi:</label>
-    <select id="mon">
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <img src="icon.png" alt="capy">
+    <div>
+      <h3>TỔNG HỢP THÔNG TIN TUYỂN SINH</h3>
+      <a href="https://forms.gle/PyuKrnjR94xB4mQz9" target="_blank">Khảo Sát Tiếng Anh Đầu Vào Miễn Phí</a>
+      <a href="https://zalo.me/g/wfdfve239" target="_blank">Tham Gia Group Zalo Tư Vấn Tuyển Sinh</a>
+      <a href="https://docs.google.com/spreadsheets/d/1ycWJZnvW822vo_qjQ1gJDPAjqWKDVsweNUKNYCYBaQM/edit?gid=212231679#gid=212231679" target="_blank">Xem thông tin tổng hợp Q&A Tuyển Sinh CTU</a>
+    </div>
+    <div class="close-btn" onclick="document.getElementById('popup').style.display='none'">&#10006;</div>
+  </div>
+</div>
+
+  <div class="box">
+    <h2>HỆ THỐNG QUY ĐỔI V-SAT 2025</h2>
+    <label>Chọn môn V-SAT 1:</label>
+    <select id="mon1">
       <option value="toan">Toán</option>
       <option value="ly">Vật lý</option>
       <option value="hoa">Hóa học</option>
@@ -67,12 +151,35 @@
       <option value="anh">Tiếng Anh</option>
       <option value="van">Ngữ Văn</option>
     </select>
+    <input type="number" id="diem1" min="0" max="150" step="0.1">
 
-    <label for="diem">Nhập điểm V-SAT:</label>
-    <input type="number" id="diem" min="0" max="150" step="0.1">
+    <label>Chọn môn V-SAT 2:</label>
+    <select id="mon2">
+      <option value="toan">Toán</option>
+      <option value="ly">Vật lý</option>
+      <option value="hoa">Hóa học</option>
+      <option value="sinh">Sinh học</option>
+      <option value="su">Lịch sử</option>
+      <option value="dia">Địa lý</option>
+      <option value="anh">Tiếng Anh</option>
+      <option value="van">Ngữ Văn</option>
+    </select>
+    <input type="number" id="diem2" min="0" max="150" step="0.1">
 
-    <button onclick="quyDoi()">Quy đổi</button>
+    <label>Chọn môn V-SAT 3:</label>
+    <select id="mon3">
+      <option value="toan">Toán</option>
+      <option value="ly">Vật lý</option>
+      <option value="hoa">Hóa học</option>
+      <option value="sinh">Sinh học</option>
+      <option value="su">Lịch sử</option>
+      <option value="dia">Địa lý</option>
+      <option value="anh">Tiếng Anh</option>
+      <option value="van">Ngữ Văn</option>
+    </select>
+    <input type="number" id="diem3" min="0" max="150" step="0.1">
 
+    <button onclick="quyDoiTong()">Tính điểm trung bình</button>
     <div class="result" id="ketqua"></div>
   </div>
 
@@ -199,19 +306,47 @@
       return "Không hợp lệ";
     }
 
-    function quyDoi() {
-      const mon = document.getElementById("mon").value;
-      const x = parseFloat(document.getElementById("diem").value);
-      const output = document.getElementById("ketqua");
+    function quyDoiTong() {
+    const mon1 = document.getElementById("mon1").value;
+    const diem1 = parseFloat(document.getElementById("diem1").value);
+    const mon2 = document.getElementById("mon2").value;
+    const diem2 = parseFloat(document.getElementById("diem2").value);
+    const mon3 = document.getElementById("mon3").value;
+    const diem3 = parseFloat(document.getElementById("diem3").value);
 
-      if (isNaN(x) || x < 0 || x > 150) {
-        output.textContent = "⚠️ Vui lòng nhập điểm V-SAT hợp lệ (0–150).";
-        return;
-      }
+    const output = document.getElementById("ketqua");
 
-      const diem = noiSuy(x, quyTacVsat[mon]);
-      output.innerHTML = `✅ Điểm thi THPT tương đương: <strong>${diem}</strong>`;
+    if (
+      isNaN(diem1) || diem1 < 0 || diem1 > 150 ||
+      isNaN(diem2) || diem2 < 0 || diem2 > 150 ||
+      isNaN(diem3) || diem3 < 0 || diem3 > 150
+    ) {
+      output.textContent = "⚠️ Vui lòng nhập đủ 3 điểm hợp lệ (0–150).";
+      return;
     }
+
+    
+    const diemQuyDoi1 = parseFloat(noiSuy(diem1, quyTacVsat[mon1]));
+    const diemQuyDoi2 = parseFloat(noiSuy(diem2, quyTacVsat[mon2]));
+    const diemQuyDoi3 = parseFloat(noiSuy(diem3, quyTacVsat[mon3]));
+
+    const diemTB = ((diemQuyDoi1 + diemQuyDoi2 + diemQuyDoi3)).toFixed(2);
+
+    output.innerHTML = `
+      ✅ Điểm đã quy đổi: <br>
+      - Điểm V-SAT Môn (${mon1.toUpperCase()}): <strong>${diemQuyDoi1}</strong><br>
+      - Điểm V-SAT Môn (${mon2.toUpperCase()}): <strong>${diemQuyDoi2}</strong><br>
+      - Điểm V-SAT Môn (${mon3.toUpperCase()}): <strong>${diemQuyDoi3}</strong><br><br>
+      🎯 <strong>TỔNG ĐIỂM XÉT TUYỂN: ${diemTB}</strong><br><br>
+
+      Điểm xét tuyển chưa bao gồm Ưu Tiên Đối Tượng & Khu Vực.<br>
+      Kết quả dựa trên quy tắc chung của Bộ Giáo Dục!<br>
+      Đang chờ Update quy tắc đổi điểm từ ĐẠI HỌC CẦN THƠ!
+    `;
+
+  }
+</script>
+    
   </script>
 </body>
 </html>
